@@ -168,7 +168,6 @@ def delete_contact():
 
 
 # Modify a contact
-
 def modify_contact():
 
     with open("addressbook.data", "rb") as f:
