@@ -182,7 +182,7 @@ print(is_palin(text))
 ############################################################################
 
 # Conclusion:
-#
+
 # All Solutions included here can check if a word/phrase is a palindrome, 
 # but only Solution 1 and 4 can check if a number (like "2022393820") is a
 # palindrome number.
