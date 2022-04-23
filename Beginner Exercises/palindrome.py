@@ -132,15 +132,24 @@ print(is_palin(text))
 # Hello!
 # aqopl239can2v39n/mal.3's93nncv1fcgcgslx9023
 
-# Limits: if you enter a non-palindrome number, like 2022393820, then both
+# The next few are a bit tricky--Solution 1 will return the correct value
+# (False), but Solution 2 & 3 will fail:
+#
+# 191aa076
+# 9328nnn902010
+# 25117abba80
+
+# Also, if you enter a non-palindrome number, like 2022393820, then both
 # Solution 2 and 3 will incorrectly return True! This is because a number
 # won't be added to the string "letters" in these Solutions, and we will
 # get "letters = None" that is still evaluated as True in Solution 2 and 3.
 
 # Similarly, if you enter nothing (input = None), then all three Solutions
-# will return True. In Eric Grimson's video mentioned above, he does say
-# that an empty string can be considered a palindrome, in the sense that a
-# reversed empty string is still empty (same as itself).
+# will return True. 
+
+# In Eric Grimson's video mentioned above, he does say that an empty string
+# can be considered a palindrome, in the sense that a reversed empty string
+# is still empty (same as itself).
 
 ############################################################################
 ############################################################################
@@ -174,13 +183,18 @@ print(is_palin(text))
 
 # Conclusion:
 #
-# All the Solutions included here can check if a word/phrase is a palindrome
-# or if a mixed string of letters & digits ("100aaa001") is a palindrome,
-# although Solution 2 and 3 won't really check the digits in the string.
-#
-# Only Solution 1 and 4 can check if a number (like "2022393820") is a
-# palindrome.
-#
+# All Solutions included here can check if a word/phrase is a palindrome, 
+# but only Solution 1 and 4 can check if a number (like "2022393820") is a
+# palindrome number.
+
+# Mixed strings of letters and digits are a bit more complicated:
+# 
+# 100aaa001 -> all Solutions return the right result, but see # line 126
+# 191aa076 -> Solutions 2 & 3 will fail
+# 9328nnn902010 -> Solutions 2 & 3 will fail
+# 25117abba80 -> Solutions 2 & 3 will fail
+# afh87932uhdf9y93 -> all Solutions return the right result 
+
 # Solution 4 is my preferred approach.
 
 ############################################################################
