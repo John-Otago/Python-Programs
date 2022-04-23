@@ -1,5 +1,5 @@
 ###################################################################################################
-# This is a Python program for a simple command-line Address Book                                           #
+# This is a Python program for a simple command-line Address Book                                 #
 #                                                                                                 #
 # Version 1.0                                                                                     #
 # Last update: 19 April 2022                                                                      #
