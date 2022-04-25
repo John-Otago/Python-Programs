@@ -6,7 +6,7 @@ def longest_word(text):
     d = {}
     for x in text.split():
         d.update({x: len(x)})    
-    return max(d, key=d.get) # I like this :)
+    return max(d, key=d.get) # I like this
 
 # longest_word(text)
 
