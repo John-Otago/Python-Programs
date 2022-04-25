@@ -24,6 +24,5 @@ def longest_word(text):
 # so for example "word," and "words" will both be 
 # treated as 5 characters.
 
-
 # I may revisit this exercise to develop a better 
 # solution in the future.
