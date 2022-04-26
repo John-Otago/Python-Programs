@@ -199,3 +199,73 @@ print(is_palin(text))
 
 ############################################################################
 ############################################################################
+
+# [Edited to add]
+# There's another solution in ICPUP (Chapter 8, p.164), available at
+# https://github.com/guttag/Intro-to-Computation-and-Programming/tree/main/code/chapter%2008
+
+# Here's the code:
+
+# # Code from page 164
+# def is_pal(x):
+#     """Assumes x is a list
+#         Returns True if the list is a palindrome; False otherwise"""
+#     temp = x[:]
+#     temp.reverse()
+#     return temp == x
+#
+# def silly(n):
+#     """Assumes n is an int > 0
+#         Gets n inputs from user
+#         Prints 'Yes' if the sequence of inputs forms a palindrome;
+#             'No' otherwise"""
+#     result = []
+#     for i in range(n):
+#         elem = input('Enter element: ')
+#         result.append(elem)
+#     print(result)
+#     if is_pal(result):
+#         print('Yes')
+#     else:
+#         print('No')
+#
+# silly(2)
+
+# I've modified the code to take an input (a full string) directly from the
+# user. Let's call it Solution 5:
+
+def is_pal():
+    """Assumes x is a list
+        Returns True if the list is a palindrome; False otherwise"""
+    x = list(input("Enter text (Solution 5): "))
+    temp = x[:]
+    temp.reverse()
+    # print(temp)
+    # print(x)
+    print(temp == x)
+
+is_pal()
+
+# Pro:
+# It handles non-palindrome numbers and mixed strings pretty well.
+# Cons:
+# It can't handle punctuations (like "Wow, wow." or "Rise to vote, sir.")
+# It can't handle capital letters ("Eve" or "Wow" will both return False).
+
+# Discussion
+# In linguistics, both "Wow, wow." and "Rise to vote, sir." should count as
+# palindrome phrases, as punctuations are not counted. "Eve" should also be
+# a palindrome, if we ignore whether a letter is in upper or lower case.
+
+# In programming, technically a capital letter is not equal to a lower-case
+# letter, which means "Eve" is not the same as "eve" (hence the former is
+# not a palindrome). The same can be said about punctuation.
+
+# Previous solutions will all check for lower-case letters and will remove
+# punctuations. Solution 5 (in its current form) won't. It needs a couple of
+# changes to work in the same way as previous solutions--or it can stand
+# alone in its own league to show a slightly different understanding of
+# palindrome (the machine version rather than the human version).
+
+############################################################################
+############################################################################
