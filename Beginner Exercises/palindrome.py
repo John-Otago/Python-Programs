@@ -33,9 +33,8 @@
 
 # Solution 1
 # Based on Swaroop's program in ABP (p.76), solving the challenge that he
-# set for the readers. It also prints out each step it takes to solve the
-# challenge.
-
+# set for the readers. It also prints out each step that it takes to solve 
+# the problem.
 
 # Things we need to know for this solution:
 # Remove punctuations from a string: https://datagy.io/python-remove-punctuation-from-string/
@@ -189,7 +188,7 @@ print(is_palin(text))
 
 # Mixed strings of letters and digits are a bit more complicated:
 # 
-# 100aaa001 -> all Solutions return the right result, but see # line 126
+# 100aaa001 -> all Solutions return the right result, but see # line 125
 # 191aa076 -> Solutions 2 & 3 will fail
 # 9328nnn902010 -> Solutions 2 & 3 will fail
 # 25117abba80 -> Solutions 2 & 3 will fail
