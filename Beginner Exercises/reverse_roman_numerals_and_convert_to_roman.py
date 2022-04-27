@@ -47,7 +47,7 @@ def from_roman_numeral(roman_numeral):
   
 ####################################################################################################################
   
-# Beyond the exercise - the following code will convert numbers to Roman numerals (reverse of the exercise)
+# Beyond the exercise - the following code will convert numbers to Roman numerals (reverse of the exercise).
 # It makes good use of "divmod", a built-in function that I wasn't aware of. I found the code here:
 # https://www.w3resource.com/python-exercises/class-exercises/python-class-exercise-1.php
 
