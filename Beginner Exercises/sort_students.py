@@ -1,4 +1,4 @@
-# An exercise at HackInScience:
+# An exercise on HackInScience:
 # https://www.hackinscience.org/exercises/sort-students
 
 # Sort students
