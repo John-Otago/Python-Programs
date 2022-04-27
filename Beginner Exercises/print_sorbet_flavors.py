@@ -1,5 +1,5 @@
 ########################################################################################
-# Exercise at HackInScience:
+# Exercise on HackInScience:
 # https://www.hackinscience.org/exercises/print-sorbet-flavors
 
 # Print sorbet flavors
