@@ -44,9 +44,14 @@ for i in FLAVORS:
 
 ########################################################################################
 
-# Solution 2 - to be added later
+# Solution 2 - create a copy list
 
+flavors_copy = FLAVORS.copy()
 
-
+for i in flavors_copy:
+    for j in FLAVORS:
+        if i != j:
+            print(f"{i}, {j}")
+    FLAVORS.remove(i)
 
 ########################################################################################
