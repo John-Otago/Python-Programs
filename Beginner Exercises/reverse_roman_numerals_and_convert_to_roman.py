@@ -39,6 +39,7 @@ def from_roman_numeral(roman_numeral):
 ####################################################################################################################
 
 # To fix this problem, it's crucial to understand the following:
+# (https://stackoverflow.com/questions/19308177/converting-roman-numerals-to-integers-in-python/48557664#48557664)
 
 # Roman numerals are read from left to right, as you add or subtract the value of each symbol.
 # If a value is lower than the following value, it will be subtracted. Otherwise it will be added.
@@ -52,7 +53,13 @@ def from_roman_numeral(roman_numeral):
 # I = 1 must be subtracted, because the following letter V = 5 is greater.
 # V = 5 must be added, because there are no more symbols left.
 
-# (https://stackoverflow.com/questions/19308177/converting-roman-numerals-to-integers-in-python/48557664#48557664)
+# In other words:
+# IV = V - I (4 = 5-1)
+# IX = X - I (9 = 10-1)
+# XL = L - X (40 = 50-10)
+# XC = C - X (90 = 100-10)
+# CD = D - C (400 = 500-100)
+# CM = M - C (900 = 1000-100)
 
 ####################################################################################################################
 
