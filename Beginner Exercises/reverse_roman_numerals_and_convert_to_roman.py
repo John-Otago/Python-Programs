@@ -1,7 +1,7 @@
 # Exercise on HackInScience:
 # https://www.hackinscience.org/exercises/reverse-roman-numerals
 
-# Tips & discussions:
+# Tips & discussions (Solutions 2, 3, and 5 come from this link):
 # https://stackoverflow.com/questions/19308177/converting-roman-numerals-to-integers-in-python
 
 # Reverse Roman Numerals
@@ -21,8 +21,8 @@
 
 ####################################################################################################################
 
-# Solution 1 (technically INCORRECT) - this solution will pass the exercise, but won't work for such Roman numerals
-# as XIV (it will return 16 rather than 14).
+# Solution 1 (a bit clumsy and technically INCORRECT) - this solution will pass the exercise, but won't work for 
+# such Roman numerals as XIV (it will return 16 rather than 14).
 
 def from_roman_numeral(roman_numeral):
     lookup = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L': 50, 'XC': 90, 'C': 100, 'CD': 400, 'D': 500,
@@ -37,7 +37,25 @@ def from_roman_numeral(roman_numeral):
         return sum(temp)
       
 ####################################################################################################################
- 
+
+# To fix this problem, it's crucial to understand the following:
+
+# Roman numerals are read from left to right, as you add or subtract the value of each symbol.
+# If a value is lower than the following value, it will be subtracted. Otherwise it will be added.
+
+# For example, we want to conver the Roman numeral MCMLIV to an Arabic number:
+#
+# M = 1000 must be added, because the following letter C =100 is lower.
+# C = 100 must be subtracted because the following letter M =1000 is greater.
+# M = 1000 must be added, because the following letter L = 50 is lower.
+# L = 50 must be added, because the following letter I =1 is lower.
+# I = 1 must be subtracted, because the following letter V = 5 is greater.
+# V = 5 must be added, because there are no more symbols left.
+
+# (https://stackoverflow.com/questions/19308177/converting-roman-numerals-to-integers-in-python/48557664#48557664)
+
+####################################################################################################################
+
 # Solution 2 - using the built-in function "enumerate":
 
 def from_roman_numeral(roman_numeral):
@@ -55,7 +73,7 @@ def from_roman_numeral(roman_numeral):
 
 ####################################################################################################################
 
-# Solution 3 - similar to the last one, but simpler and doesn't use 'enumerate'
+# Solution 3 - similar to the last one, using *-1 rather than -=, and doesn't use 'enumerate':
     
 def from_roman_numeral(s):
 
@@ -64,7 +82,7 @@ def from_roman_numeral(s):
 
     for i in range(len(s)):
         if i != len(s)-1 and lookup[s[i]] < lookup[s[i+1]]:
-             num += lookup[s[i]]*-1
+             num += lookup[s[i]]*-1 # it uses *-1 here, rather than -=
         else:
              num += lookup[s[i]]
 
@@ -72,7 +90,24 @@ def from_roman_numeral(s):
 
 ####################################################################################################################
 
-# Solution 4 - using "replace":
+# Solution 4 - my version combining the last two; so far my favorite.
+
+def from_roman_numeral(s):
+    
+    lookup = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    result = 0
+    
+    for i in range(len(s)):
+        if i != len(s)-1 and lookup[s[i]] < lookup[s[i+1]]:
+             result -= lookup[s[i]]
+        else:
+             result += lookup[s[i]]
+
+    return result
+
+####################################################################################################################
+
+# Solution 5 - using "replace":
 
 def from_roman_numeral(s):
 
