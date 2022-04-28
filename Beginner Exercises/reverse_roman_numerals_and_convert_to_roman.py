@@ -35,15 +35,17 @@ def from_roman_numeral(roman_numeral):
       
 ####################################################################################################################
  
-# Solution 2 - to be added later
-  
-  
-  
-  
-  
-  
-  
-  
+# Solution 2 - using "enumerate":
+
+def from_roman_numeral(roman_numeral):
+    lookup = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    result = 0
+    for i, c in enumerate(roman_numeral):
+        if (i + 1) == len(roman_numeral) or lookup[c] >= lookup[roman_numeral[i + 1]]:
+            result += lookup[c]
+        else:
+            result -= lookup[c]
+    return result
   
 ####################################################################################################################
   
