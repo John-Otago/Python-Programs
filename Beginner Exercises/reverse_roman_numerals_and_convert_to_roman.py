@@ -46,7 +46,25 @@ def from_roman_numeral(roman_numeral):
         else:
             result -= lookup[c]
     return result
-  
+
+####################################################################################################################
+ 
+# Solution 3 - using "replace":
+
+def from_roman_numeral(s):
+
+     roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }    
+     num = 0
+
+     s = s.replace("IV", "IIII").replace("IX", "VIIII")
+     s = s.replace("XL", "XXXX").replace("XC", "LXXXX")
+     s = s.replace("CD", "CCCC").replace("CM", "DCCCC")
+
+     for x in s:
+        num += roman[x]
+
+     return num
+
 ####################################################################################################################
   
 # Beyond the exercise - the following code will convert numbers to Roman numerals (reverse of the exercise).
@@ -76,3 +94,5 @@ def from_roman_numeral(roman_numeral):
 #     print(res)
 #
 # to_roman_numeral(int(input("Please enter an integer: ")))
+
+####################################################################################################################
