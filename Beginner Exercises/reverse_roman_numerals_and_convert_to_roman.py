@@ -1,11 +1,14 @@
 # Exercise on HackInScience:
 # https://www.hackinscience.org/exercises/reverse-roman-numerals
 
+# Tips & discussions:
+# https://stackoverflow.com/questions/19308177/converting-roman-numerals-to-integers-in-python
+
 # Reverse Roman Numerals
 # Created by Julien Palard
-
+#
 # Write a function named from_roman_numeral that return the value of a given roman numeral.
-
+#
 # Example
 # >>> print(from_roman_numeral("V"))
 # 5
@@ -35,25 +38,45 @@ def from_roman_numeral(roman_numeral):
       
 ####################################################################################################################
  
-# Solution 2 - using "enumerate":
+# Solution 2 - using the built-in function "enumerate":
 
 def from_roman_numeral(roman_numeral):
+    
     lookup = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     result = 0
+    
     for i, c in enumerate(roman_numeral):
         if (i + 1) == len(roman_numeral) or lookup[c] >= lookup[roman_numeral[i + 1]]:
             result += lookup[c]
         else:
             result -= lookup[c]
+            
     return result
 
 ####################################################################################################################
- 
-# Solution 3 - using "replace":
+
+# Solution 3 - similar to the last one, but simpler and doesn't use 'enumerate'
+    
+def from_roman_numeral(s):
+
+    lookup = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }    
+    num = 0
+
+    for i in range(len(s)):
+        if i != len(s)-1 and lookup[s[i]] < lookup[s[i+1]]:
+             num += lookup[s[i]]*-1
+        else:
+             num += lookup[s[i]]
+
+    return num
+
+####################################################################################################################
+
+# Solution 4 - using "replace":
 
 def from_roman_numeral(s):
 
-     roman = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }    
+     lookup = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }    
      num = 0
 
      s = s.replace("IV", "IIII").replace("IX", "VIIII")
@@ -61,7 +84,7 @@ def from_roman_numeral(s):
      s = s.replace("CD", "CCCC").replace("CM", "DCCCC")
 
      for x in s:
-        num += roman[x]
+        num += lookup[x]
 
      return num
 
