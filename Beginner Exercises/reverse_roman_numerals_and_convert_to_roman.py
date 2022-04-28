@@ -19,7 +19,7 @@
 ####################################################################################################################
 
 # Solution 1 (technically INCORRECT) - this solution will pass the exercise, but won't work for such Roman numerals
-# as IV or IX (it will return wrong answers).
+# as XIV (it will return 16 rather than 14).
 
 def from_roman_numeral(roman_numeral):
     lookup = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L': 50, 'XC': 90, 'C': 100, 'CD': 400, 'D': 500,
