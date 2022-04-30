@@ -33,6 +33,9 @@ print(" ".join(reversed(input("Enter text: ").split())))
 
 print(*input("Enter text: ").split()[::-1])
 
+# Solution 4
+print(*reversed(input("Enter text: ").split()))
+
 #########################################################################################################################
 
 # Breakdown of the two Solutions above:
@@ -50,5 +53,28 @@ print(s2)
 
 # Solution 3
 print(*mylist[::-1])
+
+# Solution 4
+print(*reversed(mylist))
+
+#########################################################################################################################
+
+# Comments:
+
+# In the breakdown, "input.split()" will return a list of split items from the "input" string.
+# This list of split items is then temporarily stored in a variable called "mylist". 
+# 
+# Solution 1 & 2 both use ".join" to turn the content of a list ("mylist") into a string.
+# Solution 3 & 4 both use "*" (star/asterisk) to unpack the iterable sequence "mylist" and return the content from it.
+# 
+# Both methods can eventually help print out a string of reversed items from "mylist" (the split input).
+
+# I got the inspiration for Solution 3 & 4 when I was looking for something else and stumbled upon "sequence unpacking":
+# https://stackoverflow.com/questions/52230513/python-how-to-remove-last-comma-from-printstring-end
+
+# See this video for more on Sequence Unpacking with Asterisk Operators in Python:
+# https://youtu.be/K5XHaoROxI4
+
+# Overall, I prefer Solution 3 & 4, although the first two are also good.
 
 #########################################################################################################################
