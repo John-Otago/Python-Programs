@@ -38,7 +38,7 @@ print(*input("Enter text: ").split()[::-1])
 # Breakdown of the two Solutions above:
 
 input = input("Enter text: ")
-mylist = list(input.split())
+mylist = input.split()
 
 # Solution 1
 s1 = " ".join(mylist[::-1])
