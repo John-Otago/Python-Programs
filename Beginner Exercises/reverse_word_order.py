@@ -29,6 +29,10 @@ print(" ".join(list(input("Enter text: ").split()[::-1])))
 
 print(" ".join(reversed(list(input("Enter text: ").split()))))
 
+# Solution 3:
+
+print(*list(input("Enter text: ").split()[::-1]))
+
 #########################################################################################################################
 
 # Breakdown of the two Solutions above:
@@ -43,5 +47,8 @@ print(s1)
 # Solution 2
 s2 = " ".join(reversed(mylist))
 print(s2)
-      
+
+# Solution 3
+print(*mylist[::-1])
+
 #########################################################################################################################
