@@ -23,15 +23,15 @@
 
 # Solution 1:
 
-print(" ".join(list(input("Enter text: ").split()[::-1])))
+print(" ".join(input("Enter text: ").split()[::-1]))
 
 # Solution 2:
 
-print(" ".join(reversed(list(input("Enter text: ").split()))))
+print(" ".join(reversed(input("Enter text: ").split())))
 
 # Solution 3:
 
-print(*list(input("Enter text: ").split()[::-1]))
+print(*input("Enter text: ").split()[::-1])
 
 #########################################################################################################################
 
