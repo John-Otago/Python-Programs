@@ -109,11 +109,14 @@ stamp(bob)
 wn.exitonclick()
 
 #################################################################################################
-# Here's a list of the "turtle" methods:
+# Here's a list of "turtle" methods:
 # https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/SummaryofTurtleMethods.html
 
-# Additional exercises can be found in Think Python (p.37), including drawing flowers using "arc"
-# from the "polygon" module. The code is available in the author's GitHub repo:
+# Additional exercises can be found in Think Python (p.37), including drawing flowers using the 
+# "arc" function as defined previously. The code is available in the author's GitHub repo:
 # https://github.com/AllenDowney/ThinkPython2/blob/master/code/flower.py
+
+# The author's "polygon" module is also available here:
+# https://github.com/AllenDowney/ThinkPython2/blob/master/code/polygon.py
 
 #################################################################################################
