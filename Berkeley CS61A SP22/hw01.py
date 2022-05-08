@@ -57,3 +57,48 @@ run_docstring_examples(k_in_num, globals(), True)
 # The official solution also makes a lot of sense.
 
 ###############################################################################
+
+# Q3: A Plus Abs B
+# Python's operator module defines binary functions for Python's intrinsic
+# arithmetic operators. For example, calling operator.add(2,3) is equivalent
+# to calling the expression 2 + 3; both will return 5.
+#
+# Fill in the blanks in the following function for adding a to the absolute
+# value of b, without calling abs. You may not modify any of the provided code
+# other than the two blanks.
+
+def a_plus_abs_b(a, b):
+    """Return a+abs(b), but without calling abs.
+
+    >>> a_plus_abs_b(2, 3)
+    5
+    >>> a_plus_abs_b(2, -3)
+    5
+    >>> a_plus_abs_b(-1, 4)
+    3
+    >>> a_plus_abs_b(-1, -4)
+    3
+    """
+
+    # My solution:
+    if b < 0:
+        return a - b
+    else:
+        return a + b
+
+    # Official solution:
+    from operator import add, sub
+
+    if b < 0:
+        f = sub
+    else:
+        f = add
+    return f(a, b) 
+    # This is elegant--a good demo of abstraction, defined as 'general patterns
+    # of flow controls' in the original Scheme-based SICP. I never thought we 
+    # could use functions like this until CS61A/SICP.
+
+# Test
+run_docstring_examples(a_plus_abs_b, globals(), True)
+
+###############################################################################
