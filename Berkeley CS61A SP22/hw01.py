@@ -13,6 +13,9 @@ from doctest import run_docstring_examples
 ###############################################################################
 
 # Q2: k in Num
+# Write a function k_in_num which takes in two integers, k and num. k_in_num 
+# returns True if num has the digit k and returns False if num does not have 
+# the digit k. 0 is considered to have no digits.
 
 def k_in_num(k, num):
     """
