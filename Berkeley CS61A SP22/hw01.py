@@ -1,6 +1,6 @@
 ###############################################################################
 # Berkeley CS 61A: Structure and Interpretation of Computer Programs (SICP)
-# Spring 2022
+# Spring (Jan - May) 2022
 
 # Recent iterations of CS61A (2011+) mostly use Python, vis-à-vis the original
 # SICP that relies on Scheme. See https://teachyourselfcs.com/#programming
