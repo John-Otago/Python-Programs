@@ -102,3 +102,36 @@ def a_plus_abs_b(a, b):
 run_docstring_examples(a_plus_abs_b, globals(), True)
 
 ###############################################################################
+
+# Q4: Two of Three
+#
+# Write a function that takes three positive numbers as arguments and returns
+# the sum of the squares of the two smallest numbers. Use only a single line
+# for the body of the function.
+
+def two_of_three(i, j, k):
+    """Return m*m + n*n, where m and n are the two smallest members of the
+    positive numbers i, j, and k.
+
+    >>> two_of_three(1, 2, 3)
+    5
+    >>> two_of_three(5, 3, 1)
+    10
+    >>> two_of_three(10, 2, 8)
+    68
+    >>> two_of_three(5, 5, 5)
+    50
+    """
+
+    # My solution: same as the official alternative solution below
+
+    # Official solution:
+    return min(i * i + j * j, i * i + k * k, j * j + k * k)
+
+    # Official alternative solution
+    return i ** 2 + j ** 2 + k ** 2 - max(i, j, k) ** 2
+
+# Test
+run_docstring_examples(two_of_three, globals(), True)
+
+###############################################################################
