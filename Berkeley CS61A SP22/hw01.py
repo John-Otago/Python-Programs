@@ -135,3 +135,51 @@ def two_of_three(i, j, k):
 run_docstring_examples(two_of_three, globals(), True)
 
 ###############################################################################
+
+# Q5: Largest Factor
+# Write a function that takes an integer n that is greater than 1 and returns
+# the largest integer that is smaller than n and evenly divides n.
+
+def largest_factor(n):
+    """Return the largest factor of n that is smaller than n.
+
+    >>> largest_factor(15) # factors are 1, 3, 5
+    5
+    >>> largest_factor(80) # factors are 1, 2, 4, 5, 8, 10, 16, 20, 40
+    40
+    >>> largest_factor(13) # factor is 1 since 13 is prime
+    1
+
+    # I have added a few tests to run:
+    >>> largest_factor(22) # factor is 1, 2, 11
+    11
+    >>> largest_factor(26) # factor is 1, 2, 13
+    13
+    >>> largest_factor(60) # factor is 1, 2, 3, 5, 6, 10, 12, 20, 30
+    30
+    >>> largest_factor(77) # factor is 1, 7, 11
+    11
+    """
+
+    # My initial solution:
+    num_list = []
+    for i in range(1, n):
+        if n % i == 0:
+            num_list.append(i)
+    return max(num_list)
+
+    # Official solution:
+    factor = n - 1
+    while factor > 0:
+        if n % factor == 0:
+            return factor
+        factor -= 1
+
+    # My final (improved) solution
+    for i in range(n-1, 0, -1):
+        if n % i == 0:
+            return i
+
+run_docstring_examples(largest_factor, globals(), True)
+
+###############################################################################
