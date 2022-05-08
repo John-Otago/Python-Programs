@@ -7,6 +7,7 @@
 ###############################################################################
 
 # Homework 01
+# You should try your own solutions before checking my version below.
 
 from doctest import run_docstring_examples
 
