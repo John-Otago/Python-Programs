@@ -88,7 +88,6 @@ def a_plus_abs_b(a, b):
 
     # Official solution:
     from operator import add, sub
-
     if b < 0:
         f = sub
     else:
