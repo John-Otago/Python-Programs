@@ -95,7 +95,7 @@ def a_plus_abs_b(a, b):
         f = add
     return f(a, b) 
     # This is elegant--a good demo of abstraction, defined as 'general patterns
-    # of flow controls' in the original Scheme-based SICP. I never thought we 
+    # of flow control' in the original Scheme-based SICP. I never thought we 
     # could use functions like this until CS61A/SICP.
 
 # Test
