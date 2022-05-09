@@ -78,7 +78,14 @@ def digit_pos_match(n, k):
         return True
     else:
         return False
-
+    
+    # Official solution:
+    index = 0
+    while index < k:
+        n = n // 10
+        index = index + 1
+    return n % 10 == k
+        
 # Test the function
 run_docstring_examples(digit_pos_match, globals(), True)
 
