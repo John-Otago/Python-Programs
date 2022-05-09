@@ -49,7 +49,6 @@ run_docstring_examples(add_in_range, globals(), True)
 
 ###############################################################################
 
-
 # Q5: Digit Position Match
 #
 # A number has a digit-position match if the ith-to-last digit is i. For
@@ -88,5 +87,42 @@ def digit_pos_match(n, k):
         
 # Test the function
 run_docstring_examples(digit_pos_match, globals(), True)
+
+###############################################################################
+
+# Q6: Falling Factorial
+#
+# Let's write a function falling, which is a "falling" factorial that takes two
+# arguments, n and k, and returns the product of k consecutive numbers,
+# starting from n and working downwards. When k is 0, the function should
+# return 1.
+
+def falling(n, k):
+    """Compute the falling factorial of n to depth k.
+
+    >>> falling(6, 3)  # 6 * 5 * 4
+    120
+    >>> falling(4, 3)  # 4 * 3 * 2
+    24
+    >>> falling(4, 1)  # 4
+    4
+    >>> falling(4, 0)
+    1
+    """
+
+    # My solution (recursion):
+    if k == 0:
+        return 1
+    else:
+        return n * falling(n-1, k-1)
+    
+    # Official solution (iteration + new variables "total" and "stop"):
+    total, stop = 1, n-k
+    while n > stop:
+        total, n = total*n, n-1
+    return total
+    
+# Test the function
+run_docstring_examples(falling, globals(), True)
 
 ###############################################################################
