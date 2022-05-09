@@ -18,6 +18,7 @@ from doctest import run_docstring_examples
 # Complete add_in_range, which returns the sum of all integers between start
 # and stop (inclusive).
 
+
 def add_in_range(start, stop):
     """
     >>> add_in_range(3, 5)  # .Case 1
@@ -44,6 +45,7 @@ def add_in_range(start, stop):
         start += 1
     return total
 
+
 # Test the function
 run_docstring_examples(add_in_range, globals(), True)
 
@@ -57,6 +59,7 @@ run_docstring_examples(add_in_range, globals(), True)
 #
 # Write a function that determine if a number n has a digit-position match at a
 # kth-to-last digit k.
+
 
 def digit_pos_match(n, k):
     """
@@ -85,6 +88,7 @@ def digit_pos_match(n, k):
         index = index + 1
     return n % 10 == k
         
+
 # Test the function
 run_docstring_examples(digit_pos_match, globals(), True)
 
@@ -96,6 +100,7 @@ run_docstring_examples(digit_pos_match, globals(), True)
 # arguments, n and k, and returns the product of k consecutive numbers,
 # starting from n and working downwards. When k is 0, the function should
 # return 1.
+
 
 def falling(n, k):
     """Compute the falling factorial of n to depth k.
@@ -122,7 +127,46 @@ def falling(n, k):
         total, n = total*n, n-1
     return total
     
+
 # Test the function
 run_docstring_examples(falling, globals(), True)
+
+###############################################################################
+
+# Q7: Sum Digits
+#
+# Write a function that takes in a nonnegative integer and sums its digits.
+# (Using floor division and modulo might be helpful here!)
+
+
+def sum_digits(y):
+    """Sum all the digits of y.
+
+    >>> sum_digits(10) # 1 + 0 = 1
+    1
+    >>> sum_digits(4224) # 4 + 2 + 2 + 4 = 12
+    12
+    >>> sum_digits(1234567890)
+    45
+    >>> a = sum_digits(123) # make sure that you use return rather than print
+    >>> a
+    6
+    """
+
+    # My solution:
+    total, mylist = 0, [int(x) for x in str(y)]
+    while mylist:
+        total += mylist.pop()
+    return total
+
+    # Official solution:
+    total = 0
+    while y > 0:
+        total, y = total + y % 10, y // 10
+    return total
+
+
+# Test the function
+run_docstring_examples(sum_digits, globals(), True)
 
 ###############################################################################
