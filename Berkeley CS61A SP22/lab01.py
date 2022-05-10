@@ -208,3 +208,47 @@ def k_occurrence(k, num):
 run_docstring_examples(k_occurrence, globals(), True)
 
 ###############################################################################
+
+# Q10: Double Eights
+#
+# Write a function that takes in a number and determines if the digits contain
+# two adjacent 8s.
+
+
+def double_eights(n):
+    """Return true if n has two eights in a row.
+    >>> double_eights(8)
+    False
+    >>> double_eights(88)
+    True
+    >>> double_eights(2882)
+    True
+    >>> double_eights(880088)
+    True
+    >>> double_eights(12345)
+    False
+    >>> double_eights(80808080)
+    False
+    """
+
+    # My solution:
+    return str(88) in str(n)
+
+    # Official solution:
+    prev_eight = False
+    while n > 0:
+        last_digit = n % 10
+        if last_digit == 8 and prev_eight:
+            return True
+        elif last_digit == 8:
+            prev_eight = True
+        else:
+            prev_eight = False
+        n = n // 10
+    return False
+
+
+# Test the function
+run_docstring_examples(double_eights, globals(), True)
+
+###############################################################################
