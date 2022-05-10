@@ -170,3 +170,41 @@ def sum_digits(y):
 run_docstring_examples(sum_digits, globals(), True)
 
 ###############################################################################
+
+# Q9: K-Occurrence
+#
+# Complete k_occurrence, a function which returns the number of times the digit
+# k appears in num. 0 is considered to have no digits.
+
+
+def k_occurrence(k, num):
+    """
+    >>> k_occurrence(5, 10)  # .Case 1
+    0
+    >>> k_occurrence(5, 5115)  # .Case 2
+    2
+    >>> k_occurrence(0, 100)  # .Case 3
+    2
+    >>> k_occurrence(0, 0)  # .Case 4
+    0
+    """
+
+    # My solution
+    if num == 0:
+        return 0
+    else:
+        return str(num).count(str(k))
+
+    # Official solution:
+    occurrences = 0
+    while num:
+        if num % 10 == k:
+            occurrences += 1
+        num = num // 10
+    return occurrences
+
+
+# Test the function
+run_docstring_examples(k_occurrence, globals(), True)
+
+###############################################################################
