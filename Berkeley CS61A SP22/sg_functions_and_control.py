@@ -40,7 +40,7 @@ def last_square(x):
 
     >>> cases = [(1, 0), (2, 1), (3, 1), (4, 1), (5, 4), (6, 4),
     ...          (10, 9), (17, 16), (26, 25), (36, 25), (46, 36)]
-    >>> [last_square(s) == t for s, t in cases].count(False) # This is really nice
+    >>> [last_square(s) == t for s, t in cases].count(False) # This is nice
     0
 
     """
