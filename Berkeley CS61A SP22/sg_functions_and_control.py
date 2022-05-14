@@ -284,3 +284,43 @@ def nearest_two(x):
 # Test the function
 run_docstring_examples(nearest_two, globals(), True)
 ###############################################################################
+
+# Q16: Pi Fraction
+#
+# Complete the implementation of pi_fraction, which takes a positive number
+# gap and prints the fraction that is no more than gap away from pi and has
+# the smallest possible positive integer denominator. See the doctests for
+# the format of the printed output.
+#
+# Hint: If you want to find the nearest integer to a number, use the built-in
+# round function. It's possible to solve this problem without using round.
+#
+# You may change the starter implementation if you wish.
+
+from math import pi
+
+def pi_fraction(gap):
+    """Print the fraction within gap of pi that has the smallest denominator.
+
+    >>> pi_fraction(0.01)
+    22 / 7 = 3.142857142857143
+    >>> pi_fraction(1)
+    3 / 1 = 3.0
+    >>> pi_fraction(1/8)
+    13 / 4 = 3.25
+    >>> pi_fraction(1e-6)
+    355 / 113 = 3.1415929203539825
+
+    """
+
+    # Official Solution:
+    numerator, denominator = 3, 1
+    while abs(numerator/denominator-pi) > gap:
+        denominator = denominator + 1
+        numerator = round(pi * denominator)
+    print(numerator, '/', denominator, '=', numerator/denominator)
+
+
+# Test the function
+run_docstring_examples(pi_fraction, globals(), True)
+###############################################################################
