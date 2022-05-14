@@ -280,6 +280,7 @@ def nearest_two(x):
     # until reaching the closest number to x. The last three lines enforce the
     # tie-breaking policy when x is exactly [between] two powers of two.
 
-
+    
+# Test the function
 run_docstring_examples(nearest_two, globals(), True)
 ###############################################################################
