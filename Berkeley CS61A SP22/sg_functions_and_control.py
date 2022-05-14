@@ -185,8 +185,34 @@ def same_hailstone(a, b):
 
 # Collatz conjecture (hailstone sequence):
 # https://en.wikipedia.org/wiki/Collatz_conjecture
+
 # Hailstone sequence generator:
 # https://www.dcode.fr/collatz-conjecture
+
+
+# My (super clumsy) solution:
+    list_a = [a]
+    list_b = [b]
+    a_original = a
+    b_original = b
+    while a > 1:
+        if a % 2 == 0:
+            list_a.append(a/2)
+            a = a/2
+        elif a % 2 != 0:
+            list_a.append(a*3+1)
+            a = a*3+1
+    while b > 1:
+        if b % 2 == 0:
+            list_b.append(b/2)
+            b = b/2
+        elif b % 2 != 0:
+            list_b.append(b*3+1)
+            b = b*3+1
+    if len(list_a) >= len(list_b):
+        return a_original in list_a and b_original in list_a
+    else:
+        return a_original in list_b and b_original in list_b
 
 # Official solution:
 # (It's not necessary to return the whole hailstone sequence!)
