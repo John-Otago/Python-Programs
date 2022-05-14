@@ -156,3 +156,55 @@ def triangular_sum(n):
 # Test the function
 run_docstring_examples(triangular_sum, globals(), True)
 ###############################################################################
+
+# Q14: Same hailstone
+#
+# Implement same_hailstone, which returns whether positive integer arguments a
+# and b are part of the same hailstone sequence. A hailstone sequence is
+# defined in Homework 1 as the following:
+#
+#     Pick a positive integer n as the start.
+#     If n is even, divide it by 2.
+#     If n is odd, multiply it by 3 and add 1.
+#     Continue this process until n is 1.
+
+
+def same_hailstone(a, b):
+    """Return whether a and b are both members of the same hailstone
+    sequence.
+
+    >>> same_hailstone(10, 16) # 10, 5, 16, 8, 4, 2, 1
+    True
+    >>> same_hailstone(16, 10) # order doesn't matter
+    True
+    >>> result = same_hailstone(3, 19) # return, don't print
+    >>> result
+    False
+
+    """
+
+# Collatz conjecture (hailstone sequence):
+# https://en.wikipedia.org/wiki/Collatz_conjecture
+# Hailstone sequence generator:
+# https://www.dcode.fr/collatz-conjecture
+
+# Official solution:
+# (It's not necessary to return the whole hailstone sequence!)
+
+    return in_hailstone(a, b) or in_hailstone(b, a)
+
+def in_hailstone(a, b):
+    """Return whether b is in hailstone sequence of a."""
+    while a > 1:
+        if a == b:
+            return True
+        elif a % 2 == 0:
+            a = a // 2
+        else:
+            a = a * 3 + 1
+    return False
+
+
+# Test the function
+run_docstring_examples(same_hailstone, globals(), True)
+###############################################################################
