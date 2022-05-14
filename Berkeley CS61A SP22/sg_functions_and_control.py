@@ -54,3 +54,54 @@ def last_square(x):
 
 # Test the function
 run_docstring_examples(last_square, globals(), True)
+
+###############################################################################
+
+# Q12: Overlaps
+#
+# An open interval is a range of numbers that does not include its end points.
+# For example, (10, 15) stands for all numbers that are strictly greater than
+# 10 and strictly less than 15. Two intervals overlap if they contain any
+# points in common. For example (10, 15) overlaps (14, 16), but not (1, 5) or
+# (15, 16). The intervals (10, 10) or (10, 9) contain no numbers, since nothing
+# is both greater than and less than 10, or greater than 10 and less than 9.
+# Implement the function overlaps to take four numbers as arguments,
+# representing the bounds of two intervals, and return True if the intervals
+# overlap and False otherwise.
+
+
+def overlaps(low0, high0, low1, high1):
+    """Return whether the open intervals (LOW0, HIGH0) and (LOW1, HIGH1)
+    overlap.
+
+    >>> overlaps(10, 15, 14, 16)
+    True
+    >>> overlaps(10, 15, 1, 5)
+    False
+    >>> overlaps(10, 10, 9, 11)
+    False
+    >>> result = overlaps(1, 5, 0, 3)  # Return, don't print
+    >>> result
+    True
+
+
+    >>> [overlaps(a0, b0, a1, b1) for a0, b0, a1, b1 in
+    ...       ( (1, 4, 2, 3), (1, 4, 0, 2), (1, 4, 3, 5), (0.1, 0.4, 0.2, 0.3),
+    ...         (2, 3, 1, 4), (0, 2, 1, 4), (3, 5, 1, 4) )].count(False)
+    0
+    >>> [overlaps(a0, b0, a1, b1) for a0, b0, a1, b1 in
+    ...       ( (1, 4, -1, 0), (1, 4, 5, 6), (1, 4, 4, 5), (1, 4, 0, 1),
+    ...         (-1, 0, 1, 4), (5, 6, 1, 4), (4, 5, 1, 4), (0, 1, 1, 4),
+    ...         (5, 5, 3, 6), (5, 3, 4, 6), (5, 5, 5, 5),
+    ...         (3, 6, 5, 5), (4, 6, 5, 3), (0.3, 0.6, 0.5, 0.5) )].count(True)
+    0
+    """
+
+    # Official solution:
+    return low1 < min(high0, high1) > low0
+
+
+# Test the function
+run_docstring_examples(overlaps, globals(), True)
+
+###############################################################################
