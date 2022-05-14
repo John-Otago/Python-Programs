@@ -55,6 +55,8 @@ def last_square(x):
 # Test the function
 run_docstring_examples(last_square, globals(), True)
 
+# Discussion:
+# I like how they tested multiple cases using a single list (lines 41-44)
 ###############################################################################
 
 # Q12: Overlaps
@@ -103,5 +105,54 @@ def overlaps(low0, high0, low1, high1):
 
 # Test the function
 run_docstring_examples(overlaps, globals(), True)
+###############################################################################
 
+# Q13: Triangular numbers
+#
+# The nth triangular number is defined as the sum of all integers from 1 to n,
+# i.e.
+#
+# 1 + 2 + ... + n
+#
+# The closed-form formula for the nth triangular number is
+#
+# (n + 1) * n / 2
+#
+# Define triangular_sum, which takes an integer n and returns the sum of the
+# first n triangular numbers, while printing each of the triangular numbers
+# between 1 and the nth triangular number.
+
+
+def triangular_sum(n):
+    """
+    >>> t_sum = triangular_sum(5)
+    1
+    3
+    6
+    10
+    15
+    >>> t_sum
+    35
+    """
+
+    # My solution:
+    mylist = []
+    for i in range(1, n+1):
+        print(int((i + 1) * i / 2))
+        mylist.append(int((i + 1) * i / 2))
+    return sum(mylist)
+
+    # Official solution:
+    count = 1
+    t_sum = 0
+    while count <= n:
+        t_number = count * (count + 1) // 2
+        print(t_number)
+        t_sum += t_number
+        count += 1
+    return t_sum
+
+
+# Test the function
+run_docstring_examples(triangular_sum, globals(), True)
 ###############################################################################
